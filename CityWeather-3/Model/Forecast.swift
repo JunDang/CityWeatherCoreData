@@ -74,7 +74,6 @@ class WeatherCondition: Codable {
         self.conditionName = try container.decodeIfPresent(String.self, forKey: .conditionName) ?? ""
         self.conditionDescription = try container.decodeIfPresent(String.self, forKey: .conditionDescription) ?? ""
         self.conditionIconCode = try container.decodeIfPresent(String.self, forKey: .conditionIconCode) ?? ""
-        //self.init(identifier, conditionName, conditionDescription,conditionIconCode)
     }
 }
 

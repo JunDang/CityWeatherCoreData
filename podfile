@@ -1,0 +1,12 @@
+platform :ios, '11.0'
+use_frameworks!
+
+target 'CityWeather-3' do
+
+    pod 'ReachabilitySwift'
+    pod 'Charts'
+    pod 'GooglePlaces', '3.0.2'
+    pod 'GoogleMaps', '3.0.2'
+    pod 'SwiftMessages'
+         
+end

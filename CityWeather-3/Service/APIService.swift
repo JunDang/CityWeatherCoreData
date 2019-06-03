@@ -28,7 +28,6 @@ class APIService: NSObject {
     var forecast: Forecast??
     var errorMessage = ""
     
-    
     func getCurrentWeather(cityName: String, completion: @escaping weatherResult) {
         let parameters = [
             "q": "\(cityName)",
@@ -70,17 +69,11 @@ class APIService: NSObject {
     }
     
     func parseJsonData(_ data: Data) {
-        
-        let jsonData = String(data: data, encoding: String.Encoding.utf8)
- 
         do {
-            
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             forecast = try decoder.decode(Forecast.self, from: data)
-           
-            
-           } catch let jsonError {
+         } catch let jsonError {
             //print("JsonError: " + "\(jsonError.localizedDescription)")
             self.errorMessage += "ParsingJSON error: " + jsonError.localizedDescription + "\n"
         }
